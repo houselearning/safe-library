@@ -84,7 +84,6 @@ Welcome to **SafeLibrary**, a project by the [houselearning](https://github.com/
 ### For Teachers
 
 - Switch to Teacher Mode for additional controls.
-- Add or edit lesson content in `/resources`.
 - Use classroom tools and monitor student progress (future feature).
 - Share SafeLibrary with students for safe, focused learning.
 
@@ -109,7 +108,7 @@ We welcome educators, developers, and contributors!
 4. Push to your branch (`git push origin feature/your-feature`)
 5. Open a pull request
 
-Please review our [contributing guidelines](CONTRIBUTING.md) if available.
+Please review our [contributing guidelines](https://github.com/houselearning/.github/blob/main/CONTRIBUTING.md) if available.
 
 ---
 
