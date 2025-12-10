@@ -2,7 +2,7 @@
 "companyName": "JustPlay.LOL",
 "productName": "1v1.LOL",
 "productVersion": "3.900",
-"dataUrl": "rc.data.unityweb",
+"dataUrl": "https://github.com/safelibrary/1v1-lol-unityweb/releases/download/1.0/rc.data.unityweb",
 "wasmCodeUrl": "rc.wasm.code.unityweb",
 "wasmFrameworkUrl": "rc.wasm.framework.unityweb",
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
