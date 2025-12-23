@@ -2,89 +2,89 @@
   {
     "title": "Simple Calculator",
     "description": "A basic calculator program that performs addition, subtraction, multiplication, and division. Great for quick arithmetic!",
-    "link": "https://houselearning.github.io/safe-library/programs/calculator.html"
+    "link": "https://houselearning.org/safe-library/programs/calculator.html"
   },
   {
     "title": "Unit Converter",
     "description": "Convert between different units of measurement, such as length, weight, and temperature.",
-    "link": "https://houselearning.github.io/safe-library/programs/unit-converter.html"
+    "link": "https://houselearning.org/safe-library/programs/unit-converter.html"
   },
   {
     "title": "Camera",
     "description": "A functional camera that can snap photos.",
-    "link": "https://houselearning.github.io/safe-library/programs/camera.html"
+    "link": "https://houselearning.org/safe-library/programs/camera.html"
   },  {
     "title": "Draw That, Guess it!",
     "description": "SafeAI will try to guess a drawing in 15 seconds.",
-    "link": "https://houselearning.github.io/safe-library/programs/drawthatguessit.html"
+    "link": "https://houselearning.org/safe-library/programs/drawthatguessit.html"
   },   {
     "title": "Fluid",
     "description": "A visual example of flowing liquid.",
-    "link": "https://houselearning.github.io/safe-library/programs/fluid.html"
+    "link": "https://houselearning.org/safe-library/programs/fluid.html"
   },  {
     "title": "GeoCountry",
     "description": "A map & globe simulation.",
-    "link": "https://houselearning.github.io/safe-library/programs/geocountry.html"
+    "link": "https://houselearning.org/safe-library/programs/geocountry.html"
   },  {
     "title": "5ive Nights At Kitchen Daves",
     "description": "A game where you have to survive 5 nights with Dave.",
-    "link": "https://houselearning.github.io/safe-library/programs/kitchendaves.html"
+    "link": "https://houselearning.org/safe-library/programs/kitchendaves.html"
   },  {
     "title": "Lorem Ipsum Text Generator",
     "description": "A text generator that writes placeholder text.",
-    "link": "https://houselearning.github.io/safe-library/programs/lorem-ipsum-text.html"
+    "link": "https://houselearning.org/safe-library/programs/lorem-ipsum-text.html"
   },  {
     "title": "Minesweeper",
     "description": "Minesweeper in the browser",
-    "link": "https://houselearning.github.io/safe-library/programs/minesweeper.html"
+    "link": "https://houselearning.org/safe-library/programs/minesweeper.html"
   },  {
     "title": "3D Model Viewer",
     "description": "A 3D Model Viewer & Editor",
-    "link": "https://houselearning.github.io/safe-library/programs/modelviewer.html"
+    "link": "https://houselearning.org/safe-library/programs/modelviewer.html"
   },  {
     "title": "Paint",
     "description": "Basic Painting App",
-    "link": "https://houselearning.github.io/safe-library/programs/paint.html"
+    "link": "https://houselearning.org/safe-library/programs/paint.html"
   },  {
     "title": "Piano",
     "description": "A piano in the browser.",
-    "link": "https://houselearning.github.io/safe-library/programs/piano.html"
+    "link": "https://houselearning.org/safe-library/programs/piano.html"
   },  {
     "title": "Video & Audio Recorder",
     "description": "A Simple Video capturer in the browser.",
-    "link": "https://houselearning.github.io/safe-library/programs/recorder.html"
+    "link": "https://houselearning.org/safe-library/programs/recorder.html"
   },  {
     "title": "Spacebar Clicker",
     "description": "A spacebar clicking game where you click the spacebar to level up.",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/spacebar-clicker/"
+    "link": "https://houselearning.org/safe-library/programs/assets/spacebar-clicker/"
   }, {
     "title": "1v1lol",
     "description": "[DEPRECIATED] 1v1lol in the browser.",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/1v1lol/"
+    "link": "https://houselearning.org/safe-library/programs/assets/1v1lol/"
   },  {
     "title": "2048",
     "description": "Connect the tiles to try to get 2048!",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/2048/"
+    "link": "https://houselearning.org/safe-library/programs/assets/2048/"
   },  {
     "title": "SafeLibrary Typewriter",
     "description": "A Professional Typewriter for all uses.",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/brand-tools/typewriter.html"
+    "link": "https://houselearning.org/safe-library/programs/assets/brand-tools/typewriter.html"
   },  {
     "title": "Dadish",
     "description": "A dad-raddish who goes on adventures to try to save his kids.",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/dadish"
+    "link": "https://houselearning.org/safe-library/programs/assets/dadish"
   },  {
     "title": "SafeAI Docs",
     "description": "Documentary for SafeAI",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/safe-ai-docs/"
+    "link": "https://houselearning.org/safe-library/programs/assets/safe-ai-docs/"
   },  {
     "title": "SafeAI",
     "description": "[DEPRECIATED] A friendly AI that is filtered and monitored.",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/safe-ai/"
+    "link": "https://houselearning.org/safe-library/programs/assets/safe-ai/"
   },
   {
     "title": "Rooftop Snipers",
     "description": "(no description provided)",
-    "link": "https://houselearning.github.io/safe-library/programs/assets/rooftop-snipers/"
+    "link": "https://houselearning.org/safe-library/programs/assets/rooftop-snipers/"
   }  
 ]
