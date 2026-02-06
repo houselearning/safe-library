@@ -7,11 +7,8 @@ Welcome to **SafeLibrary**, a project by the [houselearning](https://github.com/
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Usage](#usage)
-- [Customization](#customization)
 - [Safety & Privacy](#safety--privacy)
 - [Contributing](#contributing)
 - [License](#license)
@@ -39,12 +36,13 @@ Welcome to **SafeLibrary**, a project by the [houselearning](https://github.com/
 - **Interactive Tools**  
   Includes quizzes, activity modules, and tools to support classroom engagement.
 
----
 
+<!--
 ## Demo
 
 > Coming soon!  
 > For now, clone the repository and open `index.html` in your browser to explore SafeLibrary locally.
+-->
 
 ---
 
