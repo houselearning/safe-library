@@ -94,7 +94,7 @@ Welcome to **SafeLibrary**, a project by the [houselearning](https://github.com/
 
 - No personal data is collected, stored, or transmitted.
 - All code is open source; review or modify as needed for your environment.
-- Designed with security best practices for web content in educational settings.
+- Designed with security best practices for web content in educational settings.<br>
 [See the privacy statement](https://www.houselearning.org/privacy.html)
 ---
 
