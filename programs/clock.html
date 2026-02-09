@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Clock App</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --clock-face: #ffffff;
+            --primary-color: #333;
+            --accent-color: #e74c3c; /* Red for second hand/button */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--bg-color);
+        }
+
+        /* Main Container */
+        .app-container {
+            display: flex;
+            flex-direction: row;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* --- THE CLOCK --- */
+        .clock {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid #333;
+            position: relative;
+            background-color: var(--clock-face);
+            
+            background-image: url('assets/clock.png'); background-size: cover;
+
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Center Dot */
+        .clock::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #333;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        /* Common Hand Styles */
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center; /* This ensures they rotate from the center */
+            background-color: #333;
+            border-radius: 4px 4px 0 0;
+            transform: rotate(0deg);
+        }
+
+        .hand.hour {
+            width: 8px;
+            height: 70px; /* Short */
+            margin-left: -4px; /* Center alignment */
+            z-index: 2;
+        }
+
+        .hand.minute {
+            width: 6px;
+            height: 100px; /* Long */
+            margin-left: -3px;
+            background-color: #555;
+            z-index: 3;
+        }
+
+        .hand.second {
+            width: 2px;
+            height: 120px; /* Longest */
+            margin-left: -1px;
+            background-color: var(--accent-color);
+            z-index: 4;
+        }
+
+        /* --- THE CONTROLS --- */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 200px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #333;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1.1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button.paused {
+            background-color: var(--accent-color);
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 700px) {
+            .app-container {
+                flex-direction: column;
+                padding: 20px;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div class="clock" id="clockFace">
+            <div class="hand hour" id="hourHand"></div>
+            <div class="hand minute" id="minuteHand"></div>
+            <div class="hand second" id="secondHand"></div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>HOUR</label>
+                <input type="number" id="inputHour" min="1" max="12" value="12">
+            </div>
+            
+            <div class="control-group">
+                <label>MINUTE</label>
+                <input type="number" id="inputMinute" min="0" max="59" value="0">
+            </div>
+
+            <div class="control-group">
+                <label>SECOND</label>
+                <input type="number" id="inputSecond" min="0" max="59" value="0">
+            </div>
+
+            <button id="toggleBtn">PAUSE</button>
+        </div>
+
+    </div>
+
+    <script>
+        // -- Select Elements --
+        const hourHand = document.getElementById('hourHand');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        
+        const inputHour = document.getElementById('inputHour');
+        const inputMinute = document.getElementById('inputMinute');
+        const inputSecond = document.getElementById('inputSecond');
+        
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        // -- State --
+        let isRunning = true;
+        let timerInterval = null;
+
+        // Initialize with current time
+        const now = new Date();
+        let currentH = now.getHours();
+        let currentM = now.getMinutes();
+        let currentS = now.getSeconds();
+
+        // -- Logic --
+
+        function updateClockFace() {
+            // 1. Calculate degrees
+            // Seconds: 6 degrees per second (360 / 60)
+            const secondsDegrees = currentS * 6;
+            
+            // Minutes: 6 degrees per minute + adjustment for seconds
+            const minutesDegrees = (currentM * 6) + (currentS * 0.1);
+            
+            // Hours: 30 degrees per hour (360 / 12) + adjustment for minutes
+            // We use % 12 to convert 24h time to 12h for the rotation
+            const hoursDegrees = ((currentH % 12) * 30) + (currentM * 0.5);
+
+            // 2. Apply rotations
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+            minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+            hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+            // 3. Update Inputs (Only if running, to prevent typing conflicts)
+            if(isRunning) {
+                // Convert 24h to 12h format for the input box for better UX
+                let displayH = currentH % 12;
+                if(displayH === 0) displayH = 12;
+                
+                inputHour.value = displayH;
+                inputMinute.value = currentM;
+                inputSecond.value = currentS;
+            }
+        }
+
+        function tick() {
+            currentS++;
+            if (currentS > 59) {
+                currentS = 0;
+                currentM++;
+                if (currentM > 59) {
+                    currentM = 0;
+                    currentH++;
+                    if (currentH > 23) {
+                        currentH = 0;
+                    }
+                }
+            }
+            updateClockFace();
+        }
+
+        function toggleTimer() {
+            if (isRunning) {
+                // Pause
+                clearInterval(timerInterval);
+                isRunning = false;
+                toggleBtn.textContent = "PLAY";
+                toggleBtn.classList.add('paused');
+            } else {
+                // Play
+                timerInterval = setInterval(tick, 1000);
+                isRunning = true;
+                toggleBtn.textContent = "PAUSE";
+                toggleBtn.classList.remove('paused');
+                // Sync internal time with whatever is in the inputs
+                syncTimeFromInputs();
+            }
+        }
+
+        function syncTimeFromInputs() {
+            // Read values from inputs
+            let h = parseInt(inputHour.value) || 12;
+            let m = parseInt(inputMinute.value) || 0;
+            let s = parseInt(inputSecond.value) || 0;
+
+            // Clamps
+            if (h > 12) h = 12; if (h < 1) h = 1;
+            if (m > 59) m = 59; if (m < 0) m = 0;
+            if (s > 59) s = 59; if (s < 0) s = 0;
+
+            currentH = h; 
+            currentM = m;
+            currentS = s;
+
+            // Force update visuals immediately
+            updateClockFace();
+        }
+
+        // -- Event Listeners --
+
+        toggleBtn.addEventListener('click', toggleTimer);
+
+        // Allow inputs to adjust hands immediately when changed
+        [inputHour, inputMinute, inputSecond].forEach(input => {
+            input.addEventListener('input', () => {
+                // If running, pause temporarily or just let it override?
+                // Let's update the internal state immediately
+                syncTimeFromInputs();
+            });
+        });
+
+        // -- Start --
+        updateClockFace(); // Initial render
+        timerInterval = setInterval(tick, 1000); // Start the loop
+
+    </script>
+</body>
+</html>
