@@ -17,7 +17,12 @@
     "title": "Draw That, Guess it!",
     "description": "SafeAI will try to guess a drawing in 15 seconds.",
     "link": "https://houselearning.org/safe-library/programs/drawthatguessit.html"
-  },   {
+  },
+  {
+    "title": "Clock",
+    "description": "A interactive clock program.",
+    "link": "https://houselearning.org/safe-library/programs/clock.html"
+  },  {
     "title": "Fluid",
     "description": "A visual example of flowing liquid.",
     "link": "https://houselearning.org/safe-library/programs/fluid.html"
