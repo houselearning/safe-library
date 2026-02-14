@@ -57,8 +57,8 @@ Welcome to **SafeLibrary**, a project by the [houselearning](https://github.com/
 
 1. **Clone the repository**
     ```sh
-    git clone https://github.com/houselearning/safelibrary.git
-    cd safelibrary
+    git clone https://github.com/houselearning/safe-library.git
+    cd safe-library
     ```
 
 2. **Open in your web browser**
