@@ -13,10 +13,6 @@
     "title": "Camera",
     "description": "A functional camera that can snap photos.",
     "link": "https://houselearning.org/safe-library/programs/camera.html"
-  },  {
-    "title": "Draw That, Guess it!",
-    "description": "SafeAI will try to guess a drawing in 15 seconds.",
-    "link": "https://houselearning.org/safe-library/programs/drawthatguessit.html"
   },
   {
     "title": "Clock",
@@ -30,11 +26,7 @@
     "title": "GeoCountry",
     "description": "A map & globe simulation.",
     "link": "https://houselearning.org/safe-library/programs/geocountry.html"
-  },  {
-    "title": "5ive Nights At Kitchen Daves",
-    "description": "A game where you have to survive 5 nights with Dave.",
-    "link": "https://houselearning.org/safe-library/programs/kitchendaves.html"
-  },  {
+  },   {
     "title": "Lorem Ipsum Text Generator",
     "description": "A text generator that writes placeholder text.",
     "link": "https://houselearning.org/safe-library/programs/lorem-ipsum-text.html"
@@ -59,14 +51,6 @@
     "description": "A Simple Video capturer in the browser.",
     "link": "https://houselearning.org/safe-library/programs/recorder.html"
   },  {
-    "title": "Spacebar Clicker",
-    "description": "A spacebar clicking game where you click the spacebar to level up.",
-    "link": "https://houselearning.org/safe-library/programs/assets/spacebar-clicker/"
-  }, {
-    "title": "1v1lol",
-    "description": "[DEPRECIATED] 1v1lol in the browser.",
-    "link": "https://houselearning.org/safe-library/programs/assets/1v1lol/"
-  },  {
     "title": "2048",
     "description": "Connect the tiles to try to get 2048!",
     "link": "https://houselearning.org/safe-library/programs/assets/2048/"
@@ -87,9 +71,4 @@
     "description": "[DEPRECIATED] A friendly AI that is filtered and monitored.",
     "link": "https://houselearning.org/safe-library/programs/assets/safe-ai/"
   },
-  {
-    "title": "Rooftop Snipers",
-    "description": "(no description provided)",
-    "link": "https://houselearning.org/safe-library/programs/assets/rooftop-snipers/"
-  }  
 ]
