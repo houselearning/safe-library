@@ -285,7 +285,8 @@
             let s = parseInt(inputSecond.value) || 0;
 
             // Clamps
-            if (h > 12) h = 12; if (h < 1) h = 1;
+            if (h > 12) h = 12;
+            if (h < 1) h = 1;
             if (m > 59) m = 59; if (m < 0) m = 0;
             if (s > 59) s = 59; if (s < 0) s = 0;
 
