@@ -289,7 +289,10 @@
             if (m > 59) m = 59; if (m < 0) m = 0;
             if (s > 59) s = 59; if (s < 0) s = 0;
 
-            currentH = h; 
+            // Convert 12-hour input to 24-hour internal hour, preserving AM/PM
+            let isPM = (typeof currentH === 'number') ? currentH >= 12 : false;
+            let baseH = h % 12; // 12 -> 0, 1-11 stay as-is
+            currentH = isPM ? baseH + 12 : baseH;
             currentM = m;
             currentS = s;
 
