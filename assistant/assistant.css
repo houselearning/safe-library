@@ -1,4 +1,6 @@
 :root {
+  --hl-min-display-width: 320px;
+  --hl-min-display-height: 480px;
   --hl-assistant-bg: rgba(72, 94, 168, 0.9);
   --hl-assistant-bg-strong: rgba(102, 124, 210, 0.96);
   --hl-assistant-panel: rgba(255, 255, 255, 0.72);
@@ -16,6 +18,32 @@
   --hl-assistant-user-text: #20314d;
   --hl-assistant-suggestion: rgba(255,255,255,0.14);
   --hl-assistant-suggestion-text: #ecf5ff;
+}
+
+@media (max-width: 319px), (max-height: 479px) {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647 !important;
+    background: #bdbdbd !important;
+    pointer-events: auto;
+  }
+
+  body::after {
+    content: 'Display resolution too small\A\AMinimum display size: 320 x 480 pixels\A\AResize the window or device to at least this size to use SafeLibrary.';
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647 !important;
+    display: grid;
+    place-content: center;
+    padding: 24px;
+    color: #ffffff;
+    font: 700 clamp(1.1rem, 6vw, 2.1rem)/1.25 system-ui, sans-serif;
+    text-align: center;
+    white-space: pre-line;
+    pointer-events: none;
+  }
 }
 
 .hl-assistant {
@@ -197,6 +225,37 @@
 }
 
 .hl-assistant-message a {
+
+  :root {
+    --hl-min-display-width: 320px;
+    --hl-min-display-height: 480px;
+  }
+
+  @media (max-width: 319px), (max-height: 479px) {
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 2147483647 !important;
+      background: #bdbdbd !important;
+      pointer-events: auto;
+    }
+
+    body::after {
+      content: 'Display resolution too small\A\AMinimum display size: 320 x 480 pixels\A\AResize the window or device to at least this size to use SafeLibrary.';
+      position: fixed;
+      inset: 0;
+      z-index: 2147483647 !important;
+      display: grid;
+      place-content: center;
+      padding: 24px;
+      color: #ffffff;
+      font: 700 clamp(1.1rem, 6vw, 2.1rem)/1.25 system-ui, sans-serif;
+      text-align: center;
+      white-space: pre-line;
+      pointer-events: none;
+    }
+  }
   color: #ffe27a;
   text-decoration: underline;
   font-weight: 700;

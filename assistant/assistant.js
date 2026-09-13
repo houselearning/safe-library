@@ -12,7 +12,7 @@
   function scriptBaseUrl() {
     const origin = new URL(window.location.href).origin;
     const path = new URL(window.location.href).pathname.toLowerCase();
-    if (path.includes('/safe-library')) return `${origin}/safe-library/assistant`;
+    if (path.includes('/safe-library')) return `${origin}/safe-library/assistant`; 
     return path.includes('/home') ? `${origin}/home/assistant` : `${origin}/assistant`;
   }
 
