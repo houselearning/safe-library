@@ -1,13 +1,13 @@
 <html><head>
-  <script src="https://www.houselearning.org/cookiebanner.js?v=consent-choice-v3"></script>
+  <script src="https://www.houselearning.org/cookiebanner.js?v=consent-choice-v4"></script>
 <script>
 (function () {
   var measurementId = "G-7L02W3ZMS5";
-  function enableAnalytics(consent) {
-    if (consent && consent.analytics) window.cookieConsent.loadAnalytics(measurementId);
+  function enableAnalytics() {
+    window.cookieConsent.initializeAnalytics(measurementId);
   }
   window.cookieConsent.onChange(enableAnalytics);
-  enableAnalytics(window.cookieConsent.get());
+  enableAnalytics();
 })();
 </script>
 <script>
